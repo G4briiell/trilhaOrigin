@@ -1,60 +1,53 @@
-/*---RESET---*/
+/*RESET */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: 0;
 }
-/*---Remover Sublinhado de Links---*/
+
 a {
   text-decoration: none;
 }
 
-/*---Tamanho Da Imagem---*/
 img {
   width: 100%;
   height: auto;
 }
 
-/*--VARIABLE--*/
+/* Variables */
 :root {
+  --color: red;
   --hue: 159;
-  /* HS Color Mode */
+  /* HSL color mode */
   --base-color: hsl(var(--hue) 36% 57%);
   --base-color-second: hsl(var(--hue) 65% 88%);
-  --base-color: hsl(var(--hue) 57% 53%);
+  --base-color-alt: hsl(var(--hue) 57% 53%);
   --title-color: hsl(var(--hue) 41% 10%);
-  --text-color: hsl(var 0 0% 46%);
-  --text-color-light: hsl(var0 0% 98%);
-  --body-color: hsl(var);
+  --text-color: hsl(0 0% 46%);
+  --text-color-light: hsl(0 0% 98%);
+  --body-color: hsl(0 0% 98%);
 }
 
-/*--Base---*/
+/* Base */
+
 body {
   font: 400 1rem 'DM Sans', sans-serif;
   color: var(--text-color);
-  background: var(--body-color);
+  background-color: var(--body-color);
   -webkit-font-smoothing: antialiased;
 }
 
 h1 {
-  font: 700 1.85rem 'Ppoppins', sans-serif;
+  font: 700 1.875rem 'Poppins', sans-serif;
   color: var(--title-color);
   -webkit-font-smoothing: auto;
-  margin: 32px;
-}
-p {
-  margin: 32px;
 }
 
 .button {
   color: var(--color);
 }
 
-/*---Layout---*/
+/* Layout */
+
 #header {
-  border-bottom: 1px solid green;
-  color: var(--color);
-  margin-bottom: 2rem;
+  border-bottom: 1px solid #61bd4a;
 }
 
 nav {
@@ -66,30 +59,44 @@ nav {
 
 .logo {
   font: 700 1.31rem 'Poppins', sans-serif;
-  color: var(--color);
-  margin: 20px;
+  color: var(--title-color);
 }
 .logo span {
   color: var(--base-color);
 }
 
 .container {
-  width: 90%;
+  width: 100%;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
+
 .grid {
   display: grid;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .section {
-  padding: 3rem 0;
+  padding: 5rem 0;
 }
 
-/*---HOME---*/
+/* HOME */
 #home .container {
   margin: 0;
+}
+
+#home .image {
+  position: relative;
+}
+
+#home .image::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: red;
+  position: absolute;
+  top: -16.8%;
+  z-index: 0;
 }
 
 #home .image img {
@@ -97,7 +104,7 @@ nav {
   right: 2.93rem;
 }
 
-#home .text {
+#home text {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
