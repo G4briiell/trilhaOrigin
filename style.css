@@ -1,4 +1,4 @@
-/*RESET */
+/* RESET */
 * {
 }
 
@@ -14,7 +14,7 @@ img {
 /* Variables */
 :root {
   --color: red;
-  --hue: 159;
+  --hue: 345;
   /* HSL color mode */
   --base-color: hsl(var(--hue) 36% 57%);
   --base-color-second: hsl(var(--hue) 65% 88%);
@@ -41,13 +41,37 @@ h1 {
 }
 
 .button {
-  color: var(--color);
+  background-color: var(--base-color);
+  color: var(--text-color-light);
+  height: 3.5rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 2rem;
+  border-radius: 0.25rem;
+  font: 500 1rem 'DM Sans', sans-serif;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background: var(--base-color-alt);
+}
+
+.divider-1 {
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 36%, 57%, 1) 0%,
+    hsla(var(--hue), 65%, 88%, 0.34) 100%
+  );
 }
 
 /* Layout */
 
 #header {
+  /* topo do site */
   border-bottom: 1px solid #61bd4a;
+  margin-bottom: 2rem;
+  display: flex;
 }
 
 nav {
@@ -81,6 +105,11 @@ nav {
 }
 
 /* HOME */
+
+#home {
+  overflow: hidden; /* tirar sroll bar para os lados */
+}
+
 #home .container {
   margin: 0;
 }
@@ -89,22 +118,37 @@ nav {
   position: relative;
 }
 
-#home .image::before {
-  content: '';
-  height: 100%;
-  width: 100%;
-  background: red;
-  position: absolute;
-  top: -16.8%;
-  z-index: 0;
-}
-
 #home .image img {
   position: relative;
   right: 2.93rem;
 }
 
-#home text {
+#home .image::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: var(--base-color);
+  position: absolute;
+  top: -16.8%;
+  left: 17.7%;
+  z-index: 0;
+}
+
+#home .image img,
+#home .image::before {
+  border-radius: 0.25rem;
+}
+
+#home .text {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
+  text-align: center;
+}
+
+#home .text h1 {
+  margin-bottom: 1rem;
+}
+
+#home .text p {
+  margin-bottom: 2rem;
 }
